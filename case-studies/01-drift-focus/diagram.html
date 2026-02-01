@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift-Focus Generative Pipeline</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .mermaid .node-title {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .mermaid .node-subtitle {
+            font-size: 11px;
+            color: #555;
+        }
+        .mermaid .fa {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                'primaryColor': '#ffffff',
+                'primaryTextColor': '#333',
+                'primaryBorderColor': '#b0bec5',
+                'lineColor': '#78909c',
+                'secondaryColor': '#fcfcfc',
+                'tertiaryColor': '#ffffff',
+                'fontSize': '12px'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true
+            }
+        });
+    </script>
+    <div class="mermaid">
+        graph TD
+            subgraph "Phase 1: Initiation"
+                A["<div class='node-title'><i class='fa fa-bolt'></i> Webhook Trigger</div><div class='node-subtitle'>Manual or Scheduled Kickoff</div>"]
+            end
+
+            subgraph "Phase 2: Orchestration & AI Generation"
+                B["<div class='node-title'><i class='fa-solid fa-gears'></i> n8n</div><div class='node-subtitle'>Central Orchestrator</div>"]
+                subgraph "Generative AI Services"
+                    C["<div class='node-title'><i class='fa fa-film'></i> Google Veo 3</div><div class='node-subtitle'>AI Video Generation</div>"]
+                    D["<div class='node-title'><i class='fa fa-music'></i> External Service</div><div class='node-subtitle'>AI Audio Generation</div>"]
+                end
+            end
+            
+            subgraph "Phase 3: Production & Publishing"
+                E["<div class='node-title'><i class='fa-brands fa-python'></i> Python Script</div><div class='node-subtitle'>Video Processing</div>"]
+                F["<div class='node-title'><i class='fa fa-file-video'></i> FFmpeg</div><div class='node-subtitle'>Rendering Engine</div>"]
+                G["<div class='node-title'><i class='fa-brands fa-youtube' style='color: #FF0000;'></i> YouTube API</div><div class='node-subtitle'>Upload & Publish</div>"]
+            end
+            
+            A --> B
+            B -- "1. Request Assets" --> C & D
+            C -- "Video Asset" --> E
+            D -- "Audio Asset" --> E
+            E -- "Process & Combine" --> F
+            B -- "2. Generate Metadata" --> B
+            F -- "Rendered MP4" --> G
+            B -- "3. Publish" --> G
+
+            %% Styling
+            style A fill:#e8f5e9,stroke:#a5d6a7
+            style B fill:#e3f2fd,stroke:#90caf9
+            style C fill:#fff3e0,stroke:#ffcc80
+            style D fill:#fff3e0,stroke:#ffcc80
+            style E fill:#fce4ec,stroke:#f8bbd0
+            style F fill:#ede7f6,stroke:#d1c4e9
+            style G fill:#f1f8e9,stroke:#c5e1a5
+    </div>
+</body>
+</html>
