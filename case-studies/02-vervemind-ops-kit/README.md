@@ -1,6 +1,6 @@
 # Case Study #2: VerveMind Ops Kit (Real-Time Command Center)
 
-![VerveMind Ops Kit](./screenshot.jpg)
+![VerveMind Ops Kit Demo](./demo-hq.gif)
 
 > #### **Project: "VerveMind Ops Kit" — A Real-Time Project Command Center**
 >
