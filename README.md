@@ -12,4 +12,7 @@ This repository serves as the source of truth for my professional portfolio. Eac
 2.  **[VerveMind Ops Kit: A Real-Time Project Command Center](./case-studies/02-vervemind-ops-kit/README.md)**
     *   A lightweight, self-hosted Kanban/Dashboard system built with Node.js and Server-Sent Events (SSE) for instantaneous, organization-wide updates.
 
+3.  **[Mission Control 2.0: Internal Command Center](./case-studies/03-mission-control-2-0/README.md)**
+    *   A unified operations dashboard with n8n-backed APIs for Gmail captures and Notion tasks.
+
 *More case studies coming soon.*
