@@ -1,7 +1,5 @@
 # Case Study #1: Drift-Focus (Automated YouTube Channel)
 
-(Copy this text for your portfolio)
-
 > #### **Project: "Drift-Focus" — A Fully Automated Generative AI YouTube Content Pipeline**
 >
 > **Objective:** To create a "lights-out" system that could autonomously **generate**, produce, and publish unique, themed video content for a YouTube channel, eliminating all manual effort.
